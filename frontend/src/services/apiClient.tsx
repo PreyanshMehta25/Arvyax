@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Create a single, configured Axios instance for the entire application.
 const apiClient = axios.create({
-  baseURL: 'http://localhost:5000/api',
+  baseURL: 'https://arvyax-tbrq.onrender.com/api',
   headers: {
     'Content-Type': 'application/json',
   },
