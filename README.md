@@ -6,7 +6,8 @@ This is a full-stack application built for the Arvyax Full Stack Internship Assi
 
 ### ✨ Live Demo
 
-*[[Link to your deployed application](https://arvyax-ten.vercel.app/dashboard)]*
+🔗 **[View the Deployed App Here](https://arvyax-ten.vercel.app/dashboard)**  
+🌐 https://arvyax-ten.vercel.app/dashboard
 
 ---
 
@@ -69,69 +70,3 @@ First, navigate to the backend directory and install the required dependencies.
 ```bash
 cd backend
 npm install
-```
-
-Next, create a `.env` file in the `/backend` directory. Copy the contents of `.env.example` into this new file and fill in your environment variables.
-
-**.env.example**
-```
-# MongoDB Connection String (replace with your own)
-MONGO_URI=mongodb+srv://<user>:<password>@cluster0.mongodb.net/yourDatabaseName?retryWrites=true&w=majority
-
-# JWT Secret Key (can be any long, random string)
-JWT_SECRET=yourSuperSecretKeyForSigningTokens
-
-# Port for the server to run on (optional, defaults to 5000)
-PORT=5000
-```
-
-### 2. Frontend Setup
-
-In a new terminal, navigate to the frontend directory and install its dependencies.
-
-```bash
-cd frontend
-npm install
-```
-
-The frontend is configured to connect to the backend server at `http://localhost:5000`.
-
-### 3. Running the Application
-
-1.  **Start the Backend Server:**
-    ```bash
-    # From the /backend directory
-    npm start
-    ```
-    The server should now be running on `http://localhost:5000` (or the port you specified).
-
-2.  **Start the Frontend Development Server:**
-    ```bash
-    # From the /frontend directory
-    npm run dev
-    ```
-    The React application will open in your browser, usually at `http://localhost:5173`.
-
----
-
-## 📝 API Endpoints Documentation
-
-All API routes are prefixed with `/api`.
-
-| Method    | Endpoint                         | Description                               | Protected |
-| :-------- | :------------------------------- | :---------------------------------------- | :-------- |
-| **Auth** |                                  |                                           |           |
-| `POST`    | `/auth/register`                 | Register a new user.                      | No        |
-| `POST`    | `/auth/login`                    | Log in a user and receive a JWT.          | No        |
-| **User** |                                  |                                           |           |
-| `GET`     | `/user/profile`                  | Get the current user's profile.           | Yes       |
-| `PUT`     | `/user/profile`                  | Update the current user's profile.        | Yes       |
-| **Sessions**|                                |                                           |           |
-| `GET`     | `/session/sessions`              | Get all **published** sessions.           | No        |
-| `POST`    | `/session/sessions/:id/view`     | Increment the view count of a session.    | No        |
-| `GET`     | `/session/my-sessions`           | Get all sessions owned by the user.       | Yes       |
-| `GET`     | `/session/my-sessions/:id`       | Get a single session owned by the user.   | Yes       |
-| `POST`    | `/session/my-sessions/save-draft`| Create or update a session as a draft.    | Yes       |
-| `POST`    | `/session/my-sessions/publish`   | Create or update and publish a session.   | Yes       |
-| `DELETE`  | `/session/my-sessions/:id`       | Delete a session owned by the user.       | Yes       |
-| `PATCH`   | `/session/my-sessions/:id/live`  | Toggle the "live" status of a session.    | Yes       |
