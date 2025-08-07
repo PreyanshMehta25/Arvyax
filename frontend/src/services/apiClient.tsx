@@ -1,6 +1,5 @@
 import axios from 'axios';
 
-// Create a single, configured Axios instance for the entire application.
 const apiClient = axios.create({
   baseURL: 'https://arvyax-tbrq.onrender.com/api',
   headers: {
@@ -8,8 +7,6 @@ const apiClient = axios.create({
   },
 });
 
-// This interceptor automatically adds the JWT token to the
-// 'Authorization' header for every outgoing request.
 apiClient.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem('token');

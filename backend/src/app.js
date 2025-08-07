@@ -7,7 +7,7 @@ dotenv.config();
 
 const authRoutes = require('./routes/auth.route');
 const sessionRoutes = require('./routes/session.route');
-const userRoutes = require('./routes/user.route'); // ADDED
+const userRoutes = require('./routes/user.route'); 
 
 const app = express();
 
@@ -16,7 +16,7 @@ app.use(express.json());
 
 app.use('/api/auth', authRoutes);
 app.use('/api/session', sessionRoutes);
-app.use('/api/user', userRoutes); // ADDED
+app.use('/api/user', userRoutes); 
 
 const PORT = process.env.PORT || 5000;
 const MONGO_URI = process.env.MONGO_URI;

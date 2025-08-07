@@ -14,12 +14,9 @@ const {
   incrementViewCount
 } = require('../controllers/session.controller');
 
-// Public routes (no auth needed)
 router.get('/sessions', getPublicSessions);
-// ✅ **THE FIX IS HERE**: This route must match exactly what the frontend is calling.
 router.post('/sessions/:id/view', incrementViewCount);
 
-// Protected routes (auth needed)
 router.get('/my-sessions', auth, getUserSessions);
 router.get('/my-sessions/:id', auth, getSessionById);
 router.post('/my-sessions/save-draft', auth, saveDraft);

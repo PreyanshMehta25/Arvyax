@@ -34,7 +34,6 @@ const Profile: React.FC = () => {
     try {
       await updateProfile(name);
       toast.success("Profile updated successfully!");
-      // The navbar will automatically update on the next page navigation.
     } catch (error) {
       toast.error("Failed to update profile.");
     } finally {

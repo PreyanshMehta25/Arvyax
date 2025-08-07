@@ -3,7 +3,6 @@ const router = express.Router();
 const auth = require('../middlewares/auth.middleware');
 const { getProfile, updateProfile } = require('../controllers/user.controller');
 
-// Protect both routes with the authentication middleware
 router.get('/profile', auth, getProfile);
 router.put('/profile', auth, updateProfile);
 

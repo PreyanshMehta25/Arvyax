@@ -8,7 +8,7 @@ const sessionSchema = new mongoose.Schema({
   json_file_url: { type: String },
   status: { type: String, enum: ['draft', 'published'], default: 'draft' },
   isLive: { type: Boolean, default: false },
-  viewCount: { type: Number, default: 0 }, // ✅ ADDED: Field for analytics
+  viewCount: { type: Number, default: 0 },
   created_at: { type: Date, default: Date.now },
   updated_at: { type: Date, default: Date.now }
 }, { collection: 'wellness_sessions' });

@@ -4,7 +4,7 @@ import { loginUser } from '../services/authServices';
 import { Mail, Lock, Loader2, Eye, EyeOff } from 'lucide-react';
 import toast from 'react-hot-toast';
 import { AxiosError } from 'axios';
-import Cookies from 'js-cookie'; // Import the js-cookie library
+import Cookies from 'js-cookie'; 
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -23,7 +23,6 @@ const Login: React.FC = () => {
       if (response.data && response.data.token) {
         const token = response.data.token;
         
-        // ✅ Store the token in both localStorage and a cookie
         localStorage.setItem('token', token);
         Cookies.set('token', token, { expires: 7, secure: true });
         

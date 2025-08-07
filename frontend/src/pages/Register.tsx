@@ -27,7 +27,6 @@ const Register: React.FC = () => {
       if (loginResponse.data && loginResponse.data.token) {
         const token = loginResponse.data.token;
         
-        // ✅ Store the token in both localStorage and a cookie
         localStorage.setItem('token', token);
         Cookies.set('token', token, { expires: 7, secure: true });
         

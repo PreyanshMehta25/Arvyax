@@ -1,8 +1,5 @@
-// backend/src/controllers/session.controller.js
-
 const Session = require('../models/session.model');
 
-// ... (other functions like getPublicSessions, etc.)
 
 exports.getPublicSessions = async (req, res) => {
   try {
@@ -114,14 +111,12 @@ exports.toggleLiveStatus = async (req, res) => {
   }
 };
 
-// This is the function that handles the view count
 exports.incrementViewCount = async (req, res) => {
   try {
     const { id } = req.params;
     await Session.findByIdAndUpdate(id, { $inc: { viewCount: 1 } });
     res.status(200).json({ message: 'View count updated.' });
   } catch (err) {
-    // We send a success status even if it fails to avoid blocking the user
     res.status(200).json({ message: 'View count update failed but request was processed.' });
   }
 };

@@ -1,9 +1,7 @@
 const User = require('../models/user.model');
 
-// Get user profile information
 exports.getProfile = async (req, res) => {
   try {
-    // req.user is attached by the auth middleware and contains the decoded token
     const user = await User.findById(req.user.id).select('-password_hash');
     if (!user) {
       return res.status(404).json({ message: 'User not found.' });
@@ -15,7 +13,6 @@ exports.getProfile = async (req, res) => {
   }
 };
 
-// Update user profile information
 exports.updateProfile = async (req, res) => {
   try {
     const { name } = req.body;
@@ -26,7 +23,7 @@ exports.updateProfile = async (req, res) => {
     const user = await User.findByIdAndUpdate(
       req.user.id,
       { name },
-      { new: true } // Return the updated document
+      { new: true } 
     ).select('-password_hash');
 
     if (!user) {

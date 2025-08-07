@@ -4,7 +4,7 @@ import {
   getPublicSessions,
   incrementViewCount,
   Session,
-} from "../services/sessionServices"; // ✅ ADDED: incrementViewCount
+} from "../services/sessionServices"; 
 import { Clock, Tag, User, Loader2, ArrowLeft, Copy } from "lucide-react";
 import toast from "react-hot-toast";
 
@@ -17,7 +17,6 @@ const SessionViewer: React.FC = () => {
     const fetchAndTrackSession = async () => {
       if (!id) return;
       try {
-        // Increment view count first (fire and forget)
         incrementViewCount(id);
 
         const response = await getPublicSessions();

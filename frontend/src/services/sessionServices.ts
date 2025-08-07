@@ -1,5 +1,3 @@
-// frontend/src/services/sessionServices.ts
-
 import apiClient from './apiClient';
 
 export interface Session {
@@ -27,8 +25,6 @@ export const getPublicSessions = () => apiClient.get<Session[]>('/session/sessio
 export const deleteSession = (id: string) => apiClient.delete(`/session/my-sessions/${id}`);
 export const toggleLiveStatus = (id: string) => apiClient.patch<Session>(`/session/my-sessions/${id}/live`);
 
-// ✅ **THE FIX IS HERE**: This function must construct the correct URL.
 export const incrementViewCount = (id: string) => {
-    // The final URL will be: /api/session/sessions/:id/view
     return apiClient.post(`/session/sessions/${id}/view`);
 };

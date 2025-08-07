@@ -9,7 +9,7 @@ import Dashboard from './pages/Dashboard';
 import MySessions from './pages/MySessions';
 import SessionEditor from './pages/SessionEditor';
 import SessionViewer from './pages/SessionViewer';
-import Profile from './pages/Profile'; // ✅ ADDED: Import the new Profile page
+import Profile from './pages/Profile'; 
 
 function App() {
   return (
@@ -39,7 +39,6 @@ function App() {
                 </ProtectedRoute>
               }
             />
-            {/* ✅ ADDED: New route for the user profile page */}
             <Route
               path="/profile"
               element={
