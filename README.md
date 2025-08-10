@@ -6,7 +6,7 @@ This is a full-stack application built for the Arvyax Full Stack Internship Assi
 
 ### ✨ Live Demo
 
-*[[Arvyax Wellness](https://arvyax-phi.vercel.app/dashboard))]*
+*[Arvyax Wellness](https://arvyax-phi.vercel.app/dashboard)*
 
 ---
 
