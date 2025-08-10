@@ -116,7 +116,7 @@ The frontend is configured to connect to the backend server at `http://localhost
 1.  **Start the Backend Server:**
     ```bash
     # From the /backend directory
-    npm start
+    npm run dev
     ```
     The server should now be running on `http://localhost:5000`.
 
@@ -153,3 +153,12 @@ All API routes are prefixed with `/api`.
 | `POST`    | `/session/my-sessions/publish`   | Create or update and publish a session.   | Yes       |
 | `DELETE`  | `/session/my-sessions/:id`       | Delete a session owned by the user.       | Yes       |
 | `PATCH`   | `/session/my-sessions/:id/live`  | Toggle the "live" status of a session.    | Yes       |
+
+---
+
+## 🔮 Future Plans
+
+The current platform provides a robust foundation. Future development could include:
+
+-   **Real-Time Chat for Live Sessions**: Integrate WebSockets (using a library like Socket.IO) to allow users to chat in real-time during a "Live" session, enhancing engagement.
+-   **Payment API Integration**: Introduce paid sessions by integrating a payment gateway like Stripe or Razorpay, allowing hosts to monetize their content.
