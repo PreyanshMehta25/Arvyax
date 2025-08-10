@@ -116,7 +116,7 @@ The frontend is configured to connect to the backend server at `http://localhost
 1.  **Start the Backend Server:**
     ```bash
     # From the /backend directory
-    npm run dev
+    npm start
     ```
     The server should now be running on `http://localhost:5000`.
 
