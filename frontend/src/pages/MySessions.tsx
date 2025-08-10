@@ -138,7 +138,7 @@ const MySessions: React.FC = () => {
                     </td>
                     <td className="px-6 py-4 text-sm text-gray-500 flex items-center">
                       <Eye className="w-4 h-4 mr-2" />
-                      {session.viewCount / 2 || 0}
+                      {session.viewCount || 0}
                     </td>
                     <td className="px-6 py-4">
                       <span

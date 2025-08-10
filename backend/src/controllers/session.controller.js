@@ -29,13 +29,28 @@ exports.getSessionById = async (req, res) => {
     res.status(500).json({ message: 'Server error' });
   }
 };
+exports.uploadImage = (req, res) => {
+  try {
+    if (!req.file) {
+      return res.status(400).json({ message: 'No file uploaded.' });
+    }
+    // The file has been uploaded to Cloudinary by the multer middleware.
+    // The URL is available in req.file.path
+    res.status(200).json({ imageUrl: req.file.path });
+  } catch (error) {
+    console.error('Image Upload Error:', error);
+    res.status(500).json({ message: 'Image upload failed.' });
+  }
+};
 
+// UPDATE saveDraft and publishSession
 exports.saveDraft = async (req, res) => {
-  const { _id, title, tags, json_file_url } = req.body;
+  const { _id, title, tags, json_file_url, coverImageUrl } = req.body; // Add coverImageUrl
   const update = {
     title,
     tags: Array.isArray(tags) ? tags : (tags || '').split(',').map(t => t.trim()).filter(Boolean),
     json_file_url,
+    coverImageUrl, // Add coverImageUrl
     status: 'draft',
     updated_at: new Date()
   };
@@ -59,11 +74,12 @@ exports.saveDraft = async (req, res) => {
 };
 
 exports.publishSession = async (req, res) => {
-  const { _id, title, tags, json_file_url } = req.body;
+  const { _id, title, tags, json_file_url, coverImageUrl } = req.body; // Add coverImageUrl
   const updateData = {
     title,
     tags: Array.isArray(tags) ? tags : (tags || '').split(',').map(t => t.trim()).filter(Boolean),
     json_file_url,
+    coverImageUrl, // Add coverImageUrl
     status: 'published',
     updated_at: new Date()
   };

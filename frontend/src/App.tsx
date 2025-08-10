@@ -10,6 +10,8 @@ import MySessions from './pages/MySessions';
 import SessionEditor from './pages/SessionEditor';
 import SessionViewer from './pages/SessionViewer';
 import Profile from './pages/Profile'; 
+import ForgotPassword from './pages/ForgotPassword';
+import ResetPassword from './pages/ResetPassword';
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
           <Routes>
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/forgot-password" element={<ForgotPassword />} />
+            <Route path="/reset-password/:token" element={<ResetPassword />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/session/:id" element={<SessionViewer />} />
 

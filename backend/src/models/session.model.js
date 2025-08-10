@@ -6,6 +6,7 @@ const sessionSchema = new mongoose.Schema({
   title: { type: String, required: true },
   tags: [String],
   json_file_url: { type: String },
+  coverImageUrl: { type: String },
   status: { type: String, enum: ['draft', 'published'], default: 'draft' },
   isLive: { type: Boolean, default: false },
   viewCount: { type: Number, default: 0 },

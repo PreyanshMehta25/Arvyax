@@ -5,6 +5,7 @@ export interface Session {
   title: string;
   tags: string[];
   json_file_url: string;
+  coverImageUrl?: string;
   status: 'draft' | 'published';
   isLive: boolean;
   viewCount: number;
@@ -24,7 +25,15 @@ export const publishSession = (sessionData: Partial<Session>) => apiClient.post<
 export const getPublicSessions = () => apiClient.get<Session[]>('/session/sessions');
 export const deleteSession = (id: string) => apiClient.delete(`/session/my-sessions/${id}`);
 export const toggleLiveStatus = (id: string) => apiClient.patch<Session>(`/session/my-sessions/${id}/live`);
+export const incrementViewCount = (id: string) => apiClient.post(`/session/sessions/${id}/view`);
 
-export const incrementViewCount = (id: string) => {
-    return apiClient.post(`/session/sessions/${id}/view`);
+export const uploadSessionImage = (file: File) => {
+  const formData = new FormData();
+  formData.append('image', file);
+
+  return apiClient.post<{ imageUrl: string }>('/session/upload-image', formData, {
+    headers: {
+      'Content-Type': 'multipart/form-data',
+    },
+  });
 };
