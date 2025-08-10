@@ -6,7 +6,7 @@ This is a full-stack application built for the Arvyax Full Stack Internship Assi
 
 ### ✨ Live Demo
 
-*[Link to your deployed application (e.g., on Vercel, Netlify, or Render)]*
+*[[Link to your deployed application (e.g., on Vercel, Netlify, or Render](https://arvyax-phi.vercel.app/dashboard))]*
 
 ---
 
@@ -116,7 +116,7 @@ The frontend is configured to connect to the backend server at `http://localhost
 1.  **Start the Backend Server:**
     ```bash
     # From the /backend directory
-    npm run dev
+    npm start
     ```
     The server should now be running on `http://localhost:5000`.
 
